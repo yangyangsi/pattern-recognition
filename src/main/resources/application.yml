@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  resources:
+    static-locations: classpath:/template
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  #连接数据库
+  datasource:
+    username: root
+    password: 123
+    url: jdbc:mysql://localhost:3306/picture?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>图像识别</title>
+    <!--设置ico图标-->
+    <link rel="icon" href="https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico">
+    <link rel="stylesheet" href="/homePageResources/layui/css/layui.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">图片识别系统</div>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">识别类别</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" id="generalRec">通用物体识别</a></dd>
+                        <dd><a href="javascript:;" id="animalRec">动物识别</a></dd>
+                        <dd><a href="javascript:;" id="planRec">植物识别</a></dd>
+                        <dd><a href="javascript:;" id="carRec">车辆识别</a></dd>
+                        <dd><a href="javascript:;" id="dishRec">菜品识别</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <blockquote class="layui-elem-quote">base64编码后大小不超过4M，最短边至少30px，最长边最大4096px，长宽比3：1以内</blockquote>
+
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+            <legend id="uploaderHeadLine"><strong>在此处上传图片</strong></legend>
+        </fieldset>
+
+        <!--动物上传-->
+        <div class="layui-upload" id="animalButton" hidden>
+            <button class="layui-btn" id="test1" type="button">上传图片</button>
+            <div class="layui-upload-list">
+                <img class="layui-upload-img" id="demo1">
+                <p id="demoText"></p>
+            </div>
+        </div>
+        <!--植物上传-->
+        <div class="layui-upload" id="planButton" hidden>
+            <button class="layui-btn" id="test2" type="button">上传图片</button>
+            <div class="layui-upload-list">
+                <img class="layui-upload-img" id="demo2">
+                <p id="demoText2"></p>
+            </div>
+        </div>
+        <!--车辆上传-->
+        <div class="layui-upload" id="carButton" hidden>
+            <button class="layui-btn" id="test3" type="button">上传图片</button>
+            <div class="layui-upload-list">
+                <img class="layui-upload-img" id="demo3">
+                <p id="demoText3"></p>
+            </div>
+        </div>
+        <!--通用物体上传-->
+        <div class="layui-upload" id="generalButton" hidden>
+            <button class="layui-btn" id="test4" type="button">上传图片</button>
+            <div class="layui-upload-list">
+                <img class="layui-upload-img" id="demo4">
+                <p id="demoText4"></p>
+            </div>
+        </div>
+        <!--菜品上传-->
+        <div class="layui-upload" id="dishButton" hidden>
+            <button class="layui-btn" id="test5" type="button">上传图片</button>
+            <div class="layui-upload-list">
+                <img class="layui-upload-img" id="demo5">
+                <p id="demoText5"></p>
+            </div>
+        </div>
+
+
+        <!--图片上传识别结果-->
+        <div>
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                <legend><strong>上传图片识别结果</strong></legend>
+            </fieldset>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th><strong>相似物体名称</strong></th>
+                        <th><strong>相似程度</strong></th>
+                        <th><strong>百科描述</strong></th>
+                        <th><strong>相似图片</strong></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        人间不值得
+    </div>
+</div>
+<script src="/homePageResources/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+<!--图片上传-->
+<script src="/homePageResources/js/picUploader.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+com\patternRecognition\controller\PicRecController.class
+com\patternRecognition\util\PicRec.class
+com\patternRecognition\util\FileRead.class
+com\patternRecognition\dao\PictureMapper.class
+com\patternRecognition\service\PicRecService.class
+com\patternRecognition\util\ClientSingleton.class
+com\patternRecognition\model\PictureInfo.class
+com\patternRecognition\RecognitionApplication.class
+com\patternRecognition\controller\PicRecPageController.class
+com\patternRecognition\controller\HelloWordController.class
